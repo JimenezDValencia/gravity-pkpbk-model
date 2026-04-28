@@ -58,12 +58,12 @@ python scripts/run_simulation.py
 ```
 ---
 
-🧠 Author
+## 🧠 Author
 
 Daniel Jiménez Valencia
 April 2026
 
-⚠️ Disclaimer
+## ⚠️ Disclaimer
 
 This is an exploratory computational model intended for hypothesis generation.
 It does not represent validated clinical pharmacokinetic predictions.
