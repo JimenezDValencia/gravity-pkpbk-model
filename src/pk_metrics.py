@@ -209,3 +209,74 @@ plt.tight_layout()
 plt.savefig("metric_cmax_trough_vs_gravity.png", dpi=300, bbox_inches="tight")
 plt.savefig("metric_cmax_trough_vs_gravity.pdf", bbox_inches="tight")
 plt.show()
+
+# =========================
+# Figuras PK/PBPK por régimen gravitacional
+# =========================
+
+def plot_pk_group(g_list, title, filename):
+    n = len(g_list)
+
+    fig, axes = plt.subplots(
+        1,
+        n,
+        figsize=(5 * n, 4),
+        sharey=True
+    )
+
+    if n == 1:
+        axes = [axes]
+
+    for ax, g in zip(axes, g_list):
+        t, C1, C2, params = simulate(g)
+
+        ax.plot(t, C1, label="Plasma / central")
+        ax.plot(t, C2, "--", label="Tejido / periférico")
+
+        ax.set_title(f"g = {g}")
+        ax.set_xlabel("Tiempo (h)")
+        ax.grid(True, alpha=0.35)
+
+        ax.text(
+            0.02,
+            0.95,
+            f"Vc = {params['Vc_L']:.2f} L\n"
+            f"Vp = {params['Vp_L']:.2f} L\n"
+            f"CL = {params['CL_L_h']:.2f} L/h\n"
+            f"Q = {params['Q_L_h']:.2f} L/h",
+            transform=ax.transAxes,
+            fontsize=8,
+            verticalalignment="top",
+            bbox=dict(boxstyle="round", alpha=0.15)
+        )
+
+    axes[0].set_ylabel("Concentración (mg/L)")
+    axes[-1].legend(fontsize=8)
+
+    fig.suptitle(title, fontsize=15)
+    plt.tight_layout()
+    plt.savefig(filename + ".png", dpi=300, bbox_inches="tight")
+    plt.savefig(filename + ".pdf", bbox_inches="tight")
+    plt.show()
+
+
+# Gravedad terrestre
+plot_pk_group(
+    [1.0],
+    "Perfil PK/PBPK en gravedad terrestre",
+    "figure_earth_gravity"
+)
+
+# Baja gravedad: Marte, Luna, microgravedad
+plot_pk_group(
+    [0.38, 0.16, 0.01],
+    "Perfil PK/PBPK en baja gravedad",
+    "figure_low_gravity"
+)
+
+# Alta gravedad
+plot_pk_group(
+    [2, 5, 10, 100],
+    "Perfil PK/PBPK en alta gravedad",
+    "figure_high_gravity"
+)
