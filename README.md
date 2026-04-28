@@ -59,7 +59,8 @@ Run the simulation with:
 ```bash
 pip install -r requirements.txt
 python scripts/run_simulation.py
-
+```
+---
 
 🧠 Author
 
