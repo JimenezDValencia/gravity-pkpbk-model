@@ -48,12 +48,8 @@ See: [paper](paper/pbpkspace.pdf)
 
 
 ---
-
-```markdown
----
-
 ## ⚙️ Run
-
+---
 Run the simulation with:
 
 ```bash
