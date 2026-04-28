@@ -49,7 +49,7 @@ See: [paper](paper/pbpkspace.pdf)
 
 ---
 ## ⚙️ Run
----
+
 Run the simulation with:
 
 ```bash
