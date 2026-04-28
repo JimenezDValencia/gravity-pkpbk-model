@@ -1,4 +1,6 @@
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19865874.svg)](https://doi.org/10.5281/zenodo.19865874)
+
 # Gravity-modulated PK/PBPK model
 
 This repository contains an exploratory pharmacokinetic (PK) and physiologically-based pharmacokinetic (PBPK) model under variable gravitational conditions.
