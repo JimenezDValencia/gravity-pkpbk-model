@@ -1,3 +1,4 @@
+
 # Gravity-modulated PK/PBPK model
 
 This repository contains an exploratory pharmacokinetic (PK) and physiologically-based pharmacokinetic (PBPK) model under variable gravitational conditions.
@@ -69,3 +70,6 @@ April 2026
 
 This is an exploratory computational model intended for hypothesis generation.
 It does not represent validated clinical pharmacokinetic predictions.
+=======
+
+
